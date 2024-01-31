@@ -1,0 +1,64 @@
+body{ 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background: rgba(240, 245, 240, 0.66); 
+  font-family: monospace; 
+} 
+
+#root{ 
+  width: 100%; 
+  margin: 10px; 
+} 
+
+
+
+.summary{ 
+  margin-top: 10px; 
+  height: 250px; 
+  display: flex; 
+  flex-direction: column; 
+  border: 1px solid #ced4da; 
+  border-radius: 8px; 
+  padding: 20px; 
+  box-sizing: border-box; 
+  background-color: #2395e2; 
+  color: white; 
+} 
+
+.file-upload-container {
+  margin-top: 20px;
+}
+
+.upload-button {
+  color: #3498db;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.get-product-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.upload-container {
+  padding: 20px; /* Opsiyonel: Alanı içeriye doğru boşluk ekleyebilirsiniz */
+  border-radius: 10px; /* Opsiyonel: Yuvarlatılmış köşeler ekleyebilirsiniz */
+  position: absolute;
+  top: 0;
+  left: 0;
+}

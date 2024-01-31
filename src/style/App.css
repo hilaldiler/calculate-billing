@@ -1,0 +1,13 @@
+.navbar-text {
+  font-size: 20px;
+  color: #fff;
+  font-family: 'Verdana', Courier, monospace;
+}
+
+.navbar {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 100%;
+  color: #fff;
+  height: 80px;
+}
