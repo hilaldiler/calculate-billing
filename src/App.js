@@ -27,8 +27,8 @@ const App = () => {
     <div className="app-container">
       <br></br>
       <Navbar className='navbar'>
-        <Container>
-        <Navbar.Collapse className="justify-content-start">
+        <Container className='navbar-container'>
+        <Navbar.Collapse className="d-flex justify-content-start">
             <Navbar.Text className='navbar-text'>
             <img
             className='logo'
