@@ -162,7 +162,7 @@ const BillingInput = () => {
                     formData.append('productCode', productCode);
                     formData.append('customerType', customerType);
 
-                    const response = await axios.post('http://localhost:8089/getProduct', formData, {
+                    const response = await axios.post('https://billing-calculate-backend-469d1379adef.herokuapp.com/getProduct', formData, {
                         headers: {
                             'Content-Type': 'multipart/form-data',
                         },
@@ -213,7 +213,7 @@ const BillingInput = () => {
                 formData.append('filteredProductName', filteredProductName);
                 formData.append('customerType', customerType);
 
-                const response = await axios.post('http://localhost:8089/searchProduct', formData, {
+                const response = await axios.post('https://billing-calculate-backend-469d1379adef.herokuapp.com/searchProduct', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
@@ -240,7 +240,7 @@ const BillingInput = () => {
             console.log('calculate items', items);
             console.log('tax', taxRate);
             console.log('disc', discountRate);
-            const response = await axios.post('http://localhost:8089/calculateBilling', {
+            const response = await axios.post('https://billing-calculate-backend-469d1379adef.herokuapp.com/calculateBilling', {
                 items: items,
                 taxRate: taxRate,
                 discRate: discountRate
