@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      { 
+        "source": "/:path*", 
+        "destination": "https://billing-calculate-backend-git-hilaldlr-dev.apps.sandbox-m3.1530.p1.openshiftapps.com:path*" 
+      }
+    ]
+  }
