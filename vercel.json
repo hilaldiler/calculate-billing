@@ -1,11 +1,8 @@
 {
-  "rewrites": [
+  "routes": [
     { 
-      "source": "/api/:path*", 
-      "destination": "https://billing-calculate-backend-git-hilaldlr-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/:path*",
-      "headers": {
-        "Host": "billing-calculate-backend-git-hilaldlr-dev.apps.sandbox-m3.1530.p1.openshiftapps.com"
-      }
+      "source": "/api/(.*)", 
+      "destination": "https://billing-calculate-backend-git-hilaldlr-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/:1"
     }
   ]
 }
