@@ -162,7 +162,7 @@ const BillingInput = () => {
                     formData.append('productCode', productCode);
                     formData.append('customerType', customerType);
 
-                    const response = await axios.post('/api/getProduct', formData, {
+                    const response = await axios.post('/getProduct', formData, {
                         headers: {
                             'Content-Type': 'multipart/form-data',
                         },
@@ -213,7 +213,7 @@ const BillingInput = () => {
                 formData.append('filteredProductName', filteredProductName);
                 formData.append('customerType', customerType);
 
-                const response = await axios.post('/api/searchProduct', formData, {
+                const response = await axios.post('/searchProduct', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
@@ -240,7 +240,7 @@ const BillingInput = () => {
             console.log('calculate items', items);
             console.log('tax', taxRate);
             console.log('disc', discountRate);
-            const response = await axios.post('/api/calculateBilling', {
+            const response = await axios.post('/calculateBilling', {
                 items: items,
                 taxRate: taxRate,
                 discRate: discountRate
