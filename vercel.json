@@ -2,6 +2,6 @@
   "rewrites": [
     { 
       "source": "/api/", 
-      "destination": "https://billing-calculate-backend-hilaldlr-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/" }
+      "destination": "https://billing-calculate-backend-hilaldlr-dev.apps.sandbox-m3.1530.p1.openshiftapps.com" }
   ]
 }
