@@ -14,10 +14,10 @@ const BillingInput = () => {
     const [excelFile, setExcelFile] = useState(null);
     const [items, setItems] = useState([]);
     const [productCode, setProductCode] = useState('');
-    const [productName, setProductName] = useState('');
+    const [ setProductName] = useState('');
     const [productCount, setProductCount] = useState('');
-    const [unitPrice, setUnitPrice] = useState('');
-    const [totalPrice, setTotalPrice] = useState('');
+    const [ setUnitPrice] = useState('');
+    const [ setTotalPrice] = useState('');
     const [customerType, setCustomerType] = useState('');
     const [filteredProductName, setFilteredProductName] = useState('');
     const [similarProducts, setSimilarProducts] = useState([]);
@@ -275,7 +275,7 @@ const BillingInput = () => {
                         <option value="perakende">Perakende</option>
                     </Form.Select>
                 </Col>
-                <Col></Col><Col></Col><Col><a>{today}</a></Col>
+                <Col></Col><Col></Col><Col><Form.Label>{today}</Form.Label></Col>
             </Row><br></br>
             <Row>
                 <Col xs={6} md={2}>

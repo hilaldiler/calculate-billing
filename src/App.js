@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import serinTeknik from "./img/teknik.jpg";
 import sern from "./img/srn.jpg";
+import Form from 'react-bootstrap/Form';
 
 const App = () => {
 
@@ -15,13 +16,6 @@ const App = () => {
 
 
   };
-
-  const date = new Date();
-  const today = date.toLocaleDateString('en-GB', {
-    month: 'numeric',
-    day: 'numeric',
-    year: 'numeric',
-  });
 
   return (
     <div className="app-container">
@@ -41,7 +35,7 @@ const App = () => {
           </Navbar.Collapse>
           <Navbar.Collapse className="justify-content-center">
             <Navbar.Text  className='navbar-text'>
-              <a>Fiyat Teklifi</a>
+              <Form.Label>Fiyat Teklifi</Form.Label>
             </Navbar.Text>
           </Navbar.Collapse>
           <Navbar.Collapse className="justify-content-end">
