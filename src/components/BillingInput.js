@@ -169,9 +169,14 @@ const BillingInput = () => {
                         },
                     });
 
+                    console.log('response', response);
                     const name = response.data.productName;
                     const code = response.data.productCode;
                     const price = response.data.price;
+
+                    console.log('name', name);
+                    console.log('code', code);
+                    console.log('price', price);
 
                     setProductCode(code);
                     setProductName(name);
