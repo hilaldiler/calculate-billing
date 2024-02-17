@@ -162,7 +162,7 @@ const BillingInput = () => {
                     formData.append('productCode', productCode);
                     formData.append('customerType', customerType);
 
-                    const response = await axios.post('https://sernteklifal.vercel.app/api/getProduct', formData, {
+                    const response = await axios.post('https://sernoffers-0ea3757a62c1.herokuapp.com/api/getProduct', formData, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'multipart/form-data',
@@ -214,7 +214,7 @@ const BillingInput = () => {
                 formData.append('filteredProductName', filteredProductName);
                 formData.append('customerType', customerType);
 
-                const response = await axios.post('https://sernteklifal.vercel.app/api/searchProduct', formData, {
+                const response = await axios.post('https://sernoffers-0ea3757a62c1.herokuapp.com/api/searchProduct', formData, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'multipart/form-data',
@@ -242,7 +242,7 @@ const BillingInput = () => {
             console.log('calculate items', items);
             console.log('tax', taxRate);
             console.log('disc', discountRate);
-            const response = await axios.post('https://sernteklifal.vercel.app/api/calculateBilling', {
+            const response = await axios.post('https://sernoffers-0ea3757a62c1.herokuapp.com/api/calculateBilling', {
                 items: items,
                 taxRate: taxRate,
                 discRate: discountRate
