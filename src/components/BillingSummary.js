@@ -48,7 +48,7 @@ const BillingSummary = () => {
                         </Navbar.Collapse>
                         <Navbar.Collapse className="justify-content-center">
                             <Navbar.Text className='navbar-text'>
-                                <a>Fiyat Teklifi</a>
+                                <a href='#'>Fiyat Teklifi</a>
                             </Navbar.Text>
                         </Navbar.Collapse>
                         <Navbar.Collapse className="justify-content-end">
@@ -66,7 +66,7 @@ const BillingSummary = () => {
                 </Navbar> <hr></hr>
             </div><br></br>
             <div id='date' style={{ display: 'none' }}>
-                <a>{today}</a>
+                <a href='#'>{today}</a>
             </div>
             <div id="billing-items" style={{ display: 'none' }}>
                 {items.length > 0 &&

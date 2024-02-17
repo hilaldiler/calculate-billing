@@ -163,6 +163,7 @@ const BillingInput = () => {
                     formData.append('customerType', customerType);
 
                     const response = await axios.post('https://sernteklifal.vercel.app/api/getProduct', formData, {
+                        method: 'POST',
                         headers: {
                             'Content-Type': 'multipart/form-data',
                         },
@@ -214,6 +215,7 @@ const BillingInput = () => {
                 formData.append('customerType', customerType);
 
                 const response = await axios.post('https://sernteklifal.vercel.app/api/searchProduct', formData, {
+                    method: 'POST',
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
