@@ -44,7 +44,7 @@ const BillingInput = () => {
         const disc = e.target.value;
         setDiscountRate(disc);
     };
-    const handleProductPriceChange = (e) => {
+    const handleProductPriceChange = (e, productCode) => {
         const priceVal = e.target.value;
         setItems((items) =>
             items.map((item) =>
@@ -52,7 +52,17 @@ const BillingInput = () => {
             )
         );
         setUnitPrice(priceVal);
-    }
+    };
+
+    const handleProductCountChange = (e, productCode) => {
+        const count = e.target.value;
+        setItems((items) =>
+            items.map((item) =>
+                item.productCode === productCode ? { ...item, productCount: count } : item
+            )
+        );
+        setProductCount(count);
+    };
     const handleRemoveItem = (productCode) => {
         const updatedItems = items.filter(item => item.productCode !== productCode);
         setItems(updatedItems);
@@ -73,16 +83,6 @@ const BillingInput = () => {
         setFilteredProductName('');
         setProductCode(code);
     };
-    const handleProductCountChange = (e, productCode) => {
-        const count = e.target.value;
-        setItems((items) =>
-            items.map((item) =>
-                item.productCode === productCode ? { ...item, productCount: count } : item
-            )
-        );
-        setProductCount(count);
-    };
-
 
     const handleCustomerType = (e) => {
         const type = e.target.value;

@@ -53,7 +53,7 @@ const BillingSummary = () => {
                         </Navbar.Collapse>
                         <Navbar.Collapse className="justify-content-end">
                             <Navbar.Text className='navbar-text'>
-                            <img
+                                <img
                                     alt=""
                                     className='logo'
                                     src={sern}
@@ -77,7 +77,7 @@ const BillingSummary = () => {
                                     <th>Ürün</th>
                                     <th>Birim Fiyat</th>
                                     <th>Adet</th>
-                                    <th></th>
+                                    <th>Toplam</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -86,6 +86,7 @@ const BillingSummary = () => {
                                         <td>{item.productName}</td>
                                         <td>{item.price} TL</td>
                                         <td>{item.productCount}</td>
+                                        <td>{item.totalPriceOfProduct} TL</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -93,47 +94,53 @@ const BillingSummary = () => {
                     </Row>
                 }
             </div>
-            <div id="billing-sum">
-                <Row>
-                    <Col sm={8}></Col>
-                    <Col sm={4}>
-                        <Form.Label>
-                            Toplam Fiyat: {totalPrice}
-                        </Form.Label>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col sm={8}></Col>
-                    <Col sm={4} >
-                        <Form.Label>
-                            İndirim (%{discRate}): {discPrice}
-                        </Form.Label>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col sm={8}></Col>
-                    <Col sm={4} >
-                        <Form.Label>
-                            KDV (%{taxRate}): {taxPrice}
-                        </Form.Label>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col sm={8}></Col>
-                    <Col sm={4}>
-                        <Form.Label>
-                            Genel Toplam: {totalPriceWithTax}
-                        </Form.Label>
-                    </Col>
-                </Row>
+            <div className="row justify-content-end">
+                <div id="billing-sum" className="col-sm-5">
+                    <Row>
+                        <Col sm={7}></Col>
+                        <Col sm={5}>
+                            <Form.Label>
+                                Toplam Fiyat: {totalPrice} TL
+                            </Form.Label>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={7}></Col>
+                        <Col sm={5} >
+                            <Form.Label>
+                                İndirim (%{discRate}): {discPrice} TL
+                            </Form.Label>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={7}></Col>
+                        <Col sm={5} >
+                            <Form.Label>
+                                KDV (%{taxRate}): {taxPrice} TL
+                            </Form.Label>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={7}></Col>
+                        <Col sm={5}>
+                            <Form.Label>
+                                Genel Toplam: {totalPriceWithTax} TL
+                            </Form.Label>
+                        </Col>
+                    </Row>
+                </div>
             </div>
-            <Row>
-                <Col sm={8}></Col>
-                <Col sm={4}>
-                    <Button variant="outline-info" onClick={handleGeneratePDF}>PDF Oluştur
-                    </Button>
-                </Col>
-            </Row>
+            <div className="row justify-content-end">
+                <div className="col-sm-5">
+                    <Row>
+                        <Col sm={7}></Col>
+                        <Col sm={5}>
+                            <Button variant="outline-info" onClick={handleGeneratePDF}>PDF Oluştur
+                            </Button>
+                        </Col>
+                    </Row>
+                </div>
+            </div>
         </div>
     );
 };
