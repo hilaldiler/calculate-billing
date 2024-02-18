@@ -50,6 +50,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://billing-calculate-backend-hilaldlr-dev.apps.sandbox-m3.1530.p1.openshiftapps.com",
+  "proxy": "https://sernoffers-0ea3757a62c1.herokuapp.com",
   "now-build": "react-scripts build && mv build dist"
 }
