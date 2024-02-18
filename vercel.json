@@ -2,6 +2,6 @@
   "rewrites": [
     { 
       "source": "/api/(.*)",
-      "destination": "https://sernoffers-2d02255fc00a.herokuapp.com/$1" }
+      "destination": "https://sernoffers-903ae2644bef.herokuapp.com/$1" }
   ]
 }
