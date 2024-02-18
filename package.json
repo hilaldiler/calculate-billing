@@ -50,6 +50,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://sernoffers-148f5841ee45.herokuapp.com",
+  "proxy": "https://sernoffers-2d02255fc00a.herokuapp.com",
   "now-build": "react-scripts build && mv build dist"
 }
