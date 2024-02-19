@@ -50,6 +50,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://serin-teknik-teklifal-40024992021b.herokuapp.com/",
+  "proxy": "https://take-offer-sern-739b82f46a6c.herokuapp.com/",
   "now-build": "react-scripts build && mv build dist"
 }

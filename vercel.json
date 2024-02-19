@@ -2,6 +2,6 @@
   "rewrites": [
     { 
       "source": "/api/(.*)",
-      "destination": "https://serin-teknik-teklifal-40024992021b.herokuapp.com/$1" }
+      "destination": "https://take-offer-sern-739b82f46a6c.herokuapp.com/$1" }
   ]
 }
