@@ -71,10 +71,14 @@ const BillingInput = () => {
         setProductCount('');
         setUnitPrice('');
         setTotalPrice('');
-        setProductCode('');
-        setCustomerType('');
+        setProductCode('');      
         setSimilarProducts([]);
         setFilteredProductName('');
+
+        console.log('item count', items.length);
+        if(items.length===1) {
+            setCustomerType('');
+        }
     };
     const handleProductCodeChange = (e) => {
         const code = e.target.value;
