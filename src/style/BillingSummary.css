@@ -1,0 +1,16 @@
+.table-small {
+    font-size: 12px;
+}
+
+.table-small th,
+.table-small td {
+    font-size: 12px;
+}
+
+.table-small tbody tr {
+    margin-bottom: 1px; 
+}
+
+.small-label {
+    font-size: 14px;
+}

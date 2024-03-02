@@ -10,6 +10,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import serinTeknik from "../img/teknik.jpg";
 import sern from "../img/srn.jpg";
+import '../style/BillingSummary.css';
 
 const BillingSummary = () => {
     const { billingData } = useBilling();
@@ -71,7 +72,7 @@ const BillingSummary = () => {
             <div id="billing-items" style={{ display: 'none' }}>
                 {items.length > 0 &&
                     <Row>
-                        <Table striped bordered hover variant="light">
+                        <Table striped bordered hover variant="light" className="table-small table-narrow">
                             <thead>
                                 <tr>
                                     <th>Ürün</th>
@@ -84,9 +85,9 @@ const BillingSummary = () => {
                                 {items.map((item, index) => (
                                     <tr key={index}>
                                         <td>{item.productName}</td>
-                                        <td>{item.price} TL</td>
+                                        <td>{item.price.toLocaleString('tr-TR').replace('.', ',')} TL</td>
                                         <td>{item.productCount}</td>
-                                        <td>{item.totalPriceOfProduct} TL</td>
+                                        <td>{item.totalPriceOfProduct.toLocaleString('tr-TR').replace('.', ',')} TL</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -99,32 +100,32 @@ const BillingSummary = () => {
                     <Row>
                         <Col sm={7}></Col>
                         <Col sm={5}>
-                            <Form.Label>
-                                Toplam Fiyat: {totalPrice} TL
+                            <Form.Label className="small-label">
+                                Toplam Fiyat: {totalPrice.toLocaleString('tr-TR').replace('.', ',')} TL
                             </Form.Label>
                         </Col>
                     </Row>
                     <Row>
                         <Col sm={7}></Col>
                         <Col sm={5} >
-                            <Form.Label>
-                                İndirim (%{discRate}): {discPrice} TL
+                            <Form.Label className="small-label">
+                                İndirim (%{discRate}): {discPrice.toLocaleString('tr-TR').replace('.', ',')} TL
                             </Form.Label>
                         </Col>
                     </Row>
                     <Row>
                         <Col sm={7}></Col>
                         <Col sm={5} >
-                            <Form.Label>
-                                KDV (%{taxRate}): {taxPrice} TL
+                            <Form.Label className="small-label">
+                                KDV (%{taxRate}): {taxPrice.toLocaleString('tr-TR').replace('.', ',')} TL
                             </Form.Label>
                         </Col>
                     </Row>
                     <Row>
                         <Col sm={7}></Col>
                         <Col sm={5}>
-                            <Form.Label>
-                                Genel Toplam: {totalPriceWithTax} TL
+                            <Form.Label className="small-label">
+                                Genel Toplam: {totalPriceWithTax.toLocaleString('tr-TR').replace('.', ',')} TL
                             </Form.Label>
                         </Col>
                     </Row>

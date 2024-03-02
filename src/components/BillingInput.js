@@ -51,7 +51,7 @@ const BillingInput = () => {
                 item.productCode === productCode ? { ...item, price: priceVal } : item
             )
         );
-        setUnitPrice(priceVal);
+        setUnitPrice(priceVal.toLocaleString('tr-TR').replace('.', ','));
     };
 
     const handleProductCountChange = (e, productCode) => {
@@ -99,6 +99,12 @@ const BillingInput = () => {
         setProductCode('');
     };
 
+    const handleSelectedProduct = (e) => {
+        const selectedProductCode = e.target.value;
+        const selectedProduct = similarProducts.find(p => p.productCode === selectedProductCode);
+        setSelectedProduct(selectedProduct);
+    };
+
     const handleAddItem = async (e) => {
         try {
             if (!excelFile) {
@@ -112,7 +118,6 @@ const BillingInput = () => {
             if (!selectedProduct && productCode === '') {
                 alert('Lütfen ürün kodu girin veya benzer ürünleri seçin')
             }
-
             let newItem;
             if (selectedProduct) {
                 console.log('selectedProduct Code:', selectedProduct.productCode);
@@ -138,13 +143,13 @@ const BillingInput = () => {
 
                     setProductCode(code);
                     setProductName(name);
-                    setUnitPrice(price);
+                    setUnitPrice(price.toLocaleString('tr-TR').replace('.', ','));
 
                     newItem = {
                         productCode: code,
                         productName: name,
                         productCount: parseInt('1'),
-                        price: price,
+                        price: price.toLocaleString('tr-TR').replace('.', ','),
                     };
                     setItems((prevItems) => [...prevItems, newItem]);
                 }
@@ -166,7 +171,7 @@ const BillingInput = () => {
                     formData.append('productCode', productCode);
                     formData.append('customerType', customerType);
 
-                    const response = await axios.post('https://take-offer-sern-739b82f46a6c.herokuapp.com/api/getProduct', formData, {
+                    const response = await axios.post('http://localhost:8080/api/getProduct', formData, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'multipart/form-data',
@@ -184,13 +189,13 @@ const BillingInput = () => {
 
                     setProductCode(code);
                     setProductName(name);
-                    setUnitPrice(price);
+                    setUnitPrice(price.toLocaleString('tr-TR').replace('.', ','));
 
                     newItem = {
                         productCode: code,
                         productName: name,
                         productCount: parseInt('1'),
-                        price: price,
+                        price: price.toLocaleString('tr-TR').replace('.', ','),
                     };
                     setItems((prevItems) => [...prevItems, newItem]);
                 }
@@ -215,21 +220,23 @@ const BillingInput = () => {
                 return;
             }
 
+            setProductCode('');
             if (filteredProductName.trim() !== '') {
                 const formData = new FormData();
                 formData.append('file', excelFile);
                 formData.append('filteredProductName', filteredProductName);
                 formData.append('customerType', customerType);
 
-                const response = await axios.post('https://take-offer-sern-739b82f46a6c.herokuapp.com/api/searchProduct', formData, {
+                const response = await axios.post('http://localhost:8080/api/searchProduct', formData, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
                 });
+                setSimilarProducts(['']);
                 setSimilarProducts(response.data);
                 console.log('similar', similarProducts);
-                setProductCode('');
+                
             }
         } catch (error) {
             console.error('Ürün bilgisi alınamadı:', error.message);
@@ -247,10 +254,15 @@ const BillingInput = () => {
                 return;
             }
             console.log('calculate items', items);
+
             console.log('tax', taxRate);
             console.log('disc', discountRate);
-            const response = await axios.post('https://take-offer-sern-739b82f46a6c.herokuapp.com/api/calculateBilling', {
-                items: items,
+            const formattedItems = items.map(item => ({
+                ...item,
+                price: item.price.toLocaleString('tr-TR').replace(',', '.')
+            }));
+            const response = await axios.post('http://localhost:8080/api/calculateBilling', {
+                items: formattedItems,
                 taxRate: taxRate,
                 discRate: discountRate
             });
@@ -308,7 +320,7 @@ const BillingInput = () => {
                 <Col xs={6} md={4}>
                     <Form.Label ></Form.Label>
                     {similarProducts.length > 0 && (
-                        <Form.Select aria-label="Default select example" onChange={(e) => setSelectedProduct(similarProducts.find(p => p.productCode === e.target.value))}>
+                        <Form.Select aria-label="Default select example" value={selectedProduct ? selectedProduct.productCode : ""} onChange={handleSelectedProduct}>
                             <option value="">Ürün Seçiniz</option>
                             {similarProducts.map((product, index) => (
                                 <option key={index} value={product.productCode}>
