@@ -30,6 +30,11 @@ const BillingSummary = () => {
         generatePDF({ items, totalPrice, taxRate, taxPrice, discRate, discPrice, totalPriceWithTax });
     };
 
+    const totalPriceFormatted = totalPrice !== null ? totalPrice.toLocaleString('tr-TR').replace('.', ',') : "";
+    const discPriceFormatted = discPrice !== null ? discPrice.toLocaleString('tr-TR').replace('.', ',') : "";
+    const taxPriceFormatted = taxPrice !== null ? taxPrice.toLocaleString('tr-TR').replace('.', ',') : "";
+    const totalPriceWithTaxFormatted = totalPriceWithTax !== null ? totalPriceWithTax.toLocaleString('tr-TR').replace('.', ',') : "";
+
     return (
         <div className='billing-summary' id="billing-summary">
             <div id='billing-header' style={{ display: 'none' }}>
@@ -101,7 +106,7 @@ const BillingSummary = () => {
                         <Col sm={7}></Col>
                         <Col sm={5}>
                             <Form.Label className="small-label">
-                                Toplam Fiyat: {totalPrice.toLocaleString('tr-TR').replace('.', ',')} TL
+                                Toplam Fiyat: {totalPriceFormatted.toLocaleString('tr-TR').replace('.', ',')} TL
                             </Form.Label>
                         </Col>
                     </Row>
@@ -109,7 +114,7 @@ const BillingSummary = () => {
                         <Col sm={7}></Col>
                         <Col sm={5} >
                             <Form.Label className="small-label">
-                                İndirim (%{discRate}): {discPrice.toLocaleString('tr-TR').replace('.', ',')} TL
+                                İndirim (%{discRate}): {discPriceFormatted.toLocaleString('tr-TR').replace('.', ',')} TL
                             </Form.Label>
                         </Col>
                     </Row>
@@ -117,7 +122,7 @@ const BillingSummary = () => {
                         <Col sm={7}></Col>
                         <Col sm={5} >
                             <Form.Label className="small-label">
-                                KDV (%{taxRate}): {taxPrice.toLocaleString('tr-TR').replace('.', ',')} TL
+                                KDV (%{taxRate}): {taxPriceFormatted.toLocaleString('tr-TR').replace('.', ',')} TL
                             </Form.Label>
                         </Col>
                     </Row>
@@ -125,7 +130,7 @@ const BillingSummary = () => {
                         <Col sm={7}></Col>
                         <Col sm={5}>
                             <Form.Label className="small-label">
-                                Genel Toplam: {totalPriceWithTax.toLocaleString('tr-TR').replace('.', ',')} TL
+                                Genel Toplam: {totalPriceWithTaxFormatted.toLocaleString('tr-TR').replace('.', ',')} TL
                             </Form.Label>
                         </Col>
                     </Row>
