@@ -171,7 +171,7 @@ const BillingInput = () => {
                     formData.append('productCode', productCode);
                     formData.append('customerType', customerType);
 
-                    const response = await axios.post('https://sern-take-offer-8652b43f944a.herokuapp.com/api/getProduct', formData, {
+                    const response = await axios.post('https://sern-offers-c36aab5000c7.herokuapp.com/api/getProduct', formData, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'multipart/form-data',
@@ -227,7 +227,7 @@ const BillingInput = () => {
                 formData.append('filteredProductName', filteredProductName);
                 formData.append('customerType', customerType);
 
-                const response = await axios.post('https://sern-take-offer-8652b43f944a.herokuapp.com/api/searchProduct', formData, {
+                const response = await axios.post('https://sern-offers-c36aab5000c7.herokuapp.com/api/searchProduct', formData, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'multipart/form-data',
@@ -261,7 +261,7 @@ const BillingInput = () => {
                 ...item,
                 price: item.price.toLocaleString('tr-TR').replace(',', '.')
             }));
-            const response = await axios.post('https://sern-take-offer-8652b43f944a.herokuapp.com/api/calculateBilling', {
+            const response = await axios.post('https://sern-offers-c36aab5000c7.herokuapp.com/api/calculateBilling', {
                 items: formattedItems,
                 taxRate: taxRate,
                 discRate: discountRate

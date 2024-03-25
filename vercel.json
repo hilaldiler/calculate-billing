@@ -2,6 +2,6 @@
   "rewrites": [
     { 
       "source": "/api/(.*)",
-      "destination": "https://sern-take-offer-8652b43f944a.herokuapp.com/$1" }
+      "destination": "https://sern-offers-c36aab5000c7.herokuapp.com/$1" }
   ]
 }
