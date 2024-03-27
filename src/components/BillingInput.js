@@ -14,10 +14,10 @@ const BillingInput = () => {
     const [excelFile, setExcelFile] = useState(null);
     const [items, setItems] = useState([]);
     const [productCode, setProductCode] = useState('');
-    const [setProductName] = useState('');
-    const [setProductCount] = useState('');
-    const [setUnitPrice] = useState('');
-    const [setTotalPrice] = useState('');
+    const [productName, setProductName] = useState('');
+    const [productCount, setProductCount] = useState('');
+    const [unitPrice, setUnitPrice] = useState('');
+    const [totalPrice, setTotalPrice] = useState('');
     const [customerType, setCustomerType] = useState('');
     const [filteredProductName, setFilteredProductName] = useState('');
     const [similarProducts, setSimilarProducts] = useState([]);
