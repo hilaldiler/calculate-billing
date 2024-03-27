@@ -62,6 +62,7 @@ const BillingInput = () => {
             )
         );
         setProductCount(count);
+        console.log(productCount);
     };
     const handleRemoveItem = (productCode) => {
         const updatedItems = items.filter(item => item.productCode !== productCode);
@@ -189,7 +190,9 @@ const BillingInput = () => {
 
                     setProductCode(code);
                     setProductName(name);
+                    console.log(productName);
                     setUnitPrice(price.toLocaleString('tr-TR').replace('.', ','));
+                    console.log(unitPrice);
 
                     newItem = {
                         productCode: code,
@@ -271,6 +274,7 @@ const BillingInput = () => {
                 taxRate: taxRate, taxPrice: response.data.taxPrice, discRate: discountRate,
                 discPrice: response.data.discPrice, totalPriceWithTax: response.data.totalPriceWithTax
             });
+            console.log(totalPrice);
 
         } catch (error) {
             console.error('Toplam Fiyat Hesaplanamadı: ', error.message);
